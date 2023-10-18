@@ -1,8 +1,10 @@
 from django.urls import path
-from labsurf.views import index, blank, buttons, charts, elements, formu, signup, signin, tables, typography, widget
+from labsurf.views import index, labenv, interlocks, blank, buttons, charts, elements, formu, signup, signin, tables, typography, widget
 
 urlpatterns = [
     path('', index, name='index'),
+    path('labenv/', labenv, name='labenv'),
+    path('interlocks/', interlocks, name='interlocks'),
     path('blank/', blank, name='blank'),
     path('buttons/', buttons, name='buttons'),
     path('charts/', charts, name='charts'),
