@@ -1,192 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>DarkPan - Bootstrap 5 Admin Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
+{% load static %}
+{% include "labsurf/partials/head.html" %}
 
 <body>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
+        {% include "labsurf/partials/spiner.html" %}
         <!-- Spinner End -->
 
 
         <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-secondary navbar-dark">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
-                        <span>Admin</span>
-                    </div>
-                </div>
-                <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Buttons</a>
-                            <a href="typography.html" class="dropdown-item">Typography</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a>
-                        </div>
-                    </div>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
-                    <a href="form.html" class="nav-item nav-link active"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Sign In</a>
-                            <a href="signup.html" class="dropdown-item">Sign Up</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                            <a href="blank.html" class="dropdown-item">Blank Page</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
+        {% include "labsurf/partials/sidebar.html" %}
         <!-- Sidebar End -->
 
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
-                </a>
-                <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
-                </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
-                </form>
-                <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Message</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notificatin</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">John Doe</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+            {% include "labsurf/partials/navbar.html" %}
             <!-- Navbar End -->
 
 
             <!-- Form Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
+                    <!--  User Status Block -->
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">User Data (Prenchimento automatico com base no bd)</h6>
+                            <form>
+                                <div class="row mb-4">
+                                    <label for="institution" class="col-sm-2 col-form-label ">Institution</label>
+                                    <div class="col-sm-4 ">
+                                        <input type="text" class="form-control" id="institution" aria-describedby="institutionHelp">
+                                    </div>
+                                    <label for="group" class="col-sm-1 col-form-label">Group</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control"  id="group" aria-describedby="grouppHelp">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <label for="user" class="col-sm-1 col-form-label">User</label>
+                                    <div class="col-sm-11">
+                                        <input type="text" class="form-control" id="user">
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <legend class="col-form-label col-sm-4 pt-0">Send msg when finish</legend>
+                                    <div class="col-sm-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="sendMsgWhats">
+                                            <label class="form-check-label" for="gridCheck1">
+                                                whatsapp
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="tel" class="form-control" id="whatsapp">
+                                    </div>
+                                </div>     
+                            </form>
+                        </div>
+                    </div>
+                    <!--  End of User Status Block -->
+
+                    <!--  Plasma Configuration Status Block -->
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Plasma Configuration</h6>
+                            <form>
+
+                                <div class="row mb-4">
+                                    <label for="gas" class="col-sm-2 col-form-label">Gas</label>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="gas" aria-describedby="institutionHelp">
+                                        </div>
+                                    </div>
+                                    <label for="pressure" class="col-sm-2 col-form-label">Pressure</label>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="pressure" aria-describedby="pressureHelp">
+                                            <span class="input-group-text">mbar</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <label for="rffrequency" class="col-sm-2 col-form-label">RF Frequency</label>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="rffrequency" aria-describedby="institutionHelp">
+                                            <span class="input-group-text">kHz</span>
+                                        </div>
+                                    </div>
+                                    <label for="rffrequency" class="col-sm-2 col-form-label">RF Power</label>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="rfpower" aria-describedby="groupHelp">
+                                            <span class="input-group-text">watts</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <button type="button" class="btn btn-outline-success btn-lg">Enable Plasma</button> <!-- Largura maior com btn-lg -->
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--  Plasma Status Block -->
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Plasma Status</h6>
+                            <form>
+
+                                <div class="row mb-4">
+                                    <div class="col-sm-3 col-form-label">Plasma Status</div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-check-circle text-success"></i> <!-- Ícone de verificação -->
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label for="group" class="col-sm-3 col-form-label">Electron Density</label>
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="eletronDensity" aria-describedby="groupHelp">
+                                            <span class="input-group-text">cm<sup>-3</sup></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <label for="plasmaTemperature" class="col-sm-3 col-form-label">Plasma Temperature</label>
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="plasmaTemperature" aria-describedby="groupHelp">
+                                            <span class="input-group-text">eVa</span>
+                                        </div>
+                                    </div>
+                                    <label for="electronPotenctial" class="col-sm-3 col-form-label">Electron Potential</label>
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="electronPotenctial" aria-describedby="groupHelp">
+                                            <span class="input-group-text">V</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Substract Conditions</h6>
+                            <form id="">
+                                <div class="row mb-4">
+                                    <label for="layer" class="col-sm-2 col-form-label">layer</label>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="layer" aria-describedby="layerHelp">
+                                        </div>
+                                    </div>
+                                    <label for="pressure" class="col-sm-2 col-form-label">Distance</label>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="pressure" aria-describedby="pressureHelp">
+                                            <span class="input-group-text">mm</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <button type="button" id="addLayerButton" class="btn btn-outline-success btn-lg">Add Layer</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Form End -->
+            <!-- Star Form example -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Basic Form</h6>
-                            <form>
+                            <form id="layers">
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                                     <input type="email" class="form-control" id="exampleInputEmail1"
@@ -468,46 +475,39 @@
                     </div>
                 </div>
             </div>
-            <!-- Form End -->
-
 
             <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
-        </div>
-        <!-- Content End -->
+            {% include "labsurf/partials/footer.html" %}
 
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/chart/chart.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    {% include "labsurf/partials/footiest.html" %}
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
 
-</html>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Certifique-se de incluir a biblioteca jQuery -->
+
+    <script>
+        $(document).ready(function() {
+            var layerCount = 0; // Variável para controlar o número da camada
+        
+            // Captura o botão pelo ID
+            $("#addLayerButton").click(function() {
+                layerCount++; // Incrementa o número da camada
+        
+                // Clone os elementos desejados
+                var $clonedElements = $("#layer0").clone();
+        
+                // Altera os IDs dos elementos clonados para evitar duplicatas
+                $clonedElements.find('input, label').each(function() {
+                    var id = $(this).attr('id');
+                    if (id) $(this).attr('id', id + '_' + layerCount);
+                });
+        
+                // Limpa os valores dos campos de entrada na nova série de elementos
+                $clonedElements.find('input[type="text"]').val('');
+        
+                // Adiciona os novos elementos antes do botão
+                $clonedElements.insertBefore("#addLayerButton");
+            });
+        });
+        </script>
